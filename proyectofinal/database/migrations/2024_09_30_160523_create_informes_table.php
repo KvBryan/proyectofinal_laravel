@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('informes', function (Blueprint $table) {
-            $table->id('codigo');
-            $table->foreignId('usuario_id')->constrained('usuarios', 'codigo');
-            $table->text('contenido');
-            $table->string('tipo', 50); // Tipo de informe, por ejemplo, "inventario" o "depreciación"
+            $table->id('id_informe');
+            $table->string('tipo_informe', 25);
+            $table->date('fecha_generacion');
+            $table->string('ruta_archivo', 255);
+            $table->foreignId('activo')->constrained('activos', 'id_activo');
+            $table->foreignId('depreciacion')->constrained('depreciacion', 'id_depreciacion');
             $table->timestamps();
         });
     }

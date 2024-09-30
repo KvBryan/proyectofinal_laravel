@@ -7,19 +7,6 @@ Route::get('/home', function () {
     return view('home');
 })->middleware('auth');
 
-//Usuarios
-Route::get('/usuarios/create', function () {
-    return view('usuarios.create');
-});
-
-Route::get('/usuarios/show', function () {
-    return view('usuarios.show');
-});
-
-Route::get('/usuarios/update', function () {
-    return view('usuarios.update');
-});
-
 //categorias
 Route::get('/categorias/create', function () {
     return view('categorias.create');

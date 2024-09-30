@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('activos', function (Blueprint $table) {
-            $table->id('codigo');
-            $table->string('nombre', 100);
+            $table->id('id_activo');
+            $table->string('nombre', 255);
             $table->text('descripcion')->nullable();
-            $table->decimal('valor', 15, 2);
-            $table->bigInteger('categoria')->unsigned();
-            $table->foreign('categoria')->references('codigo')->on('categorias');
+            $table->decimal('valor_inicial', 15, 2);
+            $table->date('fecha_adquisicion');
+            $table->foreignId('categoria')->constrained('categorias', 'id_categoria');
             $table->timestamps();
         });
     }

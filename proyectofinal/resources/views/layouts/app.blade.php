@@ -54,9 +54,6 @@
                                 <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/usuarios/show">Usuarios</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="/categorias/show">Categorias</a>
                             </li>
                             <li class="nav-item">
