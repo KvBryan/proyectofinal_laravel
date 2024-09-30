@@ -4,20 +4,23 @@
 @section('title', 'Categoria') 
 {{-- Definimos el contenido --}} 
 @section('content')  
-    <h1>Crear categoria</h1>
+    <h1>Crear Categoría</h1>
     <div class="container mt-5">
-        <form>
+        <form action="/categorias/store" method="POST">
+            @csrf
             <div class="form-group">
-                <label for="nombre">Nombre de Categoria</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                <label for="nombre_categoria">Nombre de Categoría</label>
+                <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria" placeholder="Ingresa el nombre de la categoría">
             </div>
-            
+            <div class="form-group">
+                <label for="descripcion_categoria">Descripción de Categoría</label>
+                <textarea class="form-control" id="descripcion_categoria" name="descripcion_categoria" placeholder="Ingresa la descripción de la categoría"></textarea>
+            </div>
             <div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </form>
     </div>
-    
 @endsection
 @section('scripts')
     {{-- SweetAlert --}}
